@@ -1,5 +1,7 @@
 import pygame 
 
+#never make more than one ship, just recenter same ship instance when it has been hit
+
 class Ship:
     def __init__(self, ai_game):
         self.screen = ai_game.screen
@@ -27,3 +29,8 @@ class Ship:
 
     def blitme(self):
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        #center ship on screen
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
