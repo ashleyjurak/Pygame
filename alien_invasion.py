@@ -30,7 +30,7 @@ class AlienInvasion:
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
-        self.alien = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
 
@@ -177,7 +177,6 @@ class AlienInvasion:
         #make alien and find aliens in a row w/ equal spacing
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
-        alien_width = alien.rect.width
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)
 
@@ -242,5 +241,3 @@ class AlienInvasion:
         #make a game instance, and run the game
         ai = AlienInvasion()
         ai.run_game()
-
-
